@@ -1,9 +1,13 @@
 import React from 'react'
-import './index.styl'
+import Header from 'components/HomeHeader/'
 
 class Home extends React.Component {
     render () {
-        return <h1>Index</h1>
+        return (
+            <div>
+                <Header />
+            </div>
+        )
     }
 }
 export default Home

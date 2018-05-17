@@ -1,6 +1,7 @@
 import React from 'react'
-import Home from './Home/index.jsx'
-import User from './User/index.jsx'
+import Home from './Home/'
+import City from './City/'
+import Detail from './Detail/'
 import { HashRouter as Router,Route,Switch } from 'react-router-dom'
 
 
@@ -10,7 +11,8 @@ class App extends React.Component {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/user" component={User}/>
+                    <Route path="/city" component={City} />
+                    <Route path="/detail" component={Detail} />
                 </Switch>
             </Router>    
         )

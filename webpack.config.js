@@ -25,9 +25,9 @@ module.exports = {
             container: __dirname + '/src/container',
             components: __dirname + '/src/components',
             util: __dirname + '/src/util',
-            resource: __dirname +'/src/resource'
+            resource: __dirname + '/src/resource'
         },
-        extensions: ['.js','.jsx','styl']
+        extensions: ['.js','.jsx','.styl']
     },
     optimization: {
         splitChunks: {
@@ -45,15 +45,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             title: "React App",
-            chunks: ['common','index'],
+            chunks: ['index','common'],
 			minify: {
 				collapseWhitespace: true
             }
 			
         }),
         new ExtractTextPlugin({
-            filename: 'css/[name].[hash:8].css',
-            disable: isDev
+            filename: 'css/[name].[hash:8].css'
         }),
 		new webpack.HotModuleReplacementPlugin()
 

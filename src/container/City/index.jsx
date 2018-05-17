@@ -1,14 +1,13 @@
 import React from 'react'
 
-
-class Footer extends React.Component {
+class City extends React.Component {
     render () {
         return (
             <div>
-                footer
+                City
             </div>
         )
     }
 }
 
-export default Footer
+export default City
