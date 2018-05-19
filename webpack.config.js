@@ -53,22 +53,23 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             filename: 'css/[name].[hash:8].css'
-        }),
-		new webpack.HotModuleReplacementPlugin()
+        })
 
     ],
+    devtool: 'inline-source-map',
     devServer: {
-        hot:true,
-        compress: true,
+        inline: true,
         port: 8080,
         historyApiFallback: {
             index: "/dist/index.html"
         },
         proxy: {
             '/api': {
-                target: 'localhost:3000',
-                changeOrigin: true
+            target: 'http://localhost:8080',
+            pathRewrite: {
+            '^/api': '/static/mock'
             }
+        }
         }
     }
 }
